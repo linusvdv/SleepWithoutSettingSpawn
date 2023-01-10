@@ -10,6 +10,8 @@ public class SWSSMain implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		EntitySleepEvents.ALLOW_SETTING_SPAWN.register((player, sleepingPos) -> false);
+		EntitySleepEvents.ALLOW_SETTING_SPAWN.register((player, sleepingPos) -> {
+			return player.isSneaking();
+		});
 	}
 }
